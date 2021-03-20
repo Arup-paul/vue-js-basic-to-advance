@@ -1,3 +1,3 @@
-#VUe js all of need
-  - Vuex
+#VUE js all of need
+  - VUEX
   
