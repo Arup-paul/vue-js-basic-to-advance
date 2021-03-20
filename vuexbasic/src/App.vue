@@ -7,6 +7,9 @@
         </h3>
         {{count}}
      </div>
+      <div>
+           <button @click.prevent="onIncrement()">Increment</button>
+      </div>
    </div>
 
 </template>
@@ -22,6 +25,14 @@ export default {
   },
   components: {
     Counter
+  },
+  methods:{
+    onIncrement(){
+     this.$store.commit({
+       type:'increment',
+       value:4,
+     });
+    }
   }
 }
 </script>
