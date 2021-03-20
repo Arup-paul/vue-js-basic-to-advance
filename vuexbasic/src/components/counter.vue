@@ -1,6 +1,11 @@
 <template>
     <div>
-        <div>{{$store.state.count}}</div>
+        <div>
+            {{$store.state.count}}
+            </div>
+         <div>
+             <button @click.prevent="onIncrement()">Increment</button>
+         </div>
     </div>
 </template>
 
@@ -10,6 +15,16 @@
      data(){
          return {
               
+         }
+     },
+     computed:{
+        count() {
+            return this.$store.state.count;
+        }
+     },
+     methods:{
+         onIncrement(){
+             this.$store.state.count++;
          }
      }
  }

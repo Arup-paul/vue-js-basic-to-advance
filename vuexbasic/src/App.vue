@@ -1,13 +1,25 @@
 <template>
    <div>
      <Counter />
+     <div>
+        <h3>
+          App Vue Counter
+        </h3>
+        {{count}}
+     </div>
    </div>
+
 </template>
 
 <script> 
 import Counter from "./components/counter.vue"
 export default {
   name: 'App',
+  computed:{
+      count(){
+        return this.$store.state.count;
+      }
+  },
   components: {
     Counter
   }
