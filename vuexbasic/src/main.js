@@ -17,8 +17,15 @@ const store = createStore({
         };
     },
     getters:{
-       doneTodosList(state){
-        return state.todos.filter((todo) => todo.done).length
+        getTodoById: (state) => (id) => {
+           return state.todos.find((todo) => todo.id ===id); 
+        },
+
+        doneTodos(state){
+          return state.todos.filter((todo) => todo.done);
+        },
+       doneTodosList(state,getters){
+        return getters.doneTodos.length
        },
     },
     mutations:{
